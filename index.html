@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuniOrigem | Portfólio & Streaming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0b0c10;
+            --bg-card: #1f2833;
+            --text-light: #c5c6c7;
+            --text-white: #ffffff;
+            --accent-blue: #45a29e;
+            --neon-blue: #66fcf1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        header {
+            background-color: rgba(11, 12, 16, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--accent-blue);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+        }
+
+        .logo {
+            color: var(--neon-blue);
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            color: var(--text-white);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-blue);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 10% 60px;
+            min-height: 100vh;
+        }
+
+        h1, h2 {
+            color: var(--text-white);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        h2 span {
+            color: var(--neon-blue);
+        }
+
+        /* Home */
+        #home {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(11, 12, 16, 0.8), rgba(11, 12, 16, 0.9)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
+        }
+
+        .home-content h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .home-content h1 span {
+            color: var(--neon-blue);
+        }
+
+        .home-content p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: transparent;
+            color: var(--neon-blue);
+            border: 2px solid var(--neon-blue);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--neon-blue);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px var(--neon-blue);
+        }
+
+        /* Dead By Daylight Section */
+        #dbd {
+            background-color: var(--bg-dark);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-blue);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(102, 252, 241, 0.2);
+            border-left: 4px solid var(--neon-blue);
+        }
+
+        .card h3 {
+            color: var(--neon-blue);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        /* Contact Section */
+        #contato {
+            background-color: #0f1218;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--bg-dark);
+            border: 1px solid var(--accent-blue);
+            color: var(--text-white);
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus, .input-group textarea:focus {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 8px rgba(102, 252, 241, 0.3);
+        }
+
+        .input-group textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--accent-blue);
+            color: var(--bg-dark);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--neon-blue);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid var(--accent-blue);
+        }
+
+        /* Responsividade */
+        @media(max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 15px;
+            }
+            .nav-links {
+                margin-top: 15px;
+            }
+            .nav-links a {
+                margin: 0 10px;
+            }
+            .home-content h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">JuniOrigem</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#dbd">Dead By Daylight</a>
+                <a href="#contato">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="home-content">
+            <h1>Bem-vindo ao <span>JuniOrigem</span></h1>
+            <p>Acompanhe minha jornada como streamer. Das lives na Twitch aos clipes virais no TikTok, este é o meu espaço oficial para compartilhar gameplay, estratégias e muita gameplay de qualidade.</p>
+            <a href="#dbd" class="btn">Explorar Conteúdo</a>
+        </div>
+    </section>
+
+    <!-- Dead By Daylight Section -->
+    <section id="dbd">
+        <h2>Universo <span>Dead By Daylight</span></h2>
+        <div class="cards">
+            
+            <!-- Card 1: Dicas -->
+            <div class="card">
+                <h3>Dicas de Sobrevivência e Caça</h3>
+                <p>O essencial para escapar da Entidade ou sacrificar com eficiência. Aprenda a fazer loops otimizados nas estruturas, como gerenciar o tempo de reparo de geradores e as melhores rotas para encurtar a distância nas perseguições.</p>
+            </div>
+
+            <!-- Card 2: Atualizações -->
+            <div class="card">
+                <h3>Atualizações do Fog</h3>
+                <p>Acompanhe as últimas mudanças nos patches notes. Análises de nerfs e buffs em Killers e Survivors, alterações em mapas e como adaptar sua gameplay às novas metas impostas pela Behaviour.</p>
+            </div>
+
+            <!-- Card 3: Perks Situacionais -->
+            <div class="card">
+                <h3>Uso de Perks Situacionais</h3>
+                <p>Não dependa apenas do meta. Descubra como extrair valor de perks subestimados. Entenda quando utilizar <strong>Inquebrável</strong> para virar um slugfest, ou como <strong>Tocaia</strong> pode salvar uma partida contra Killers focados em controle de mapa.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato">
+        <h2>Entre em <span>Contato</span></h2>
+        <div class="contact-container">
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <input type="text" placeholder="Seu Nome" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Seu E-mail" required>
+                </div>
+                <div class="input-group">
+                    <textarea placeholder="Sua Mensagem (Propostas, parcerias ou dúvidas)" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-submit">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 JuniOrigem. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
